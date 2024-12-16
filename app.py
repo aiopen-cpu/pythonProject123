@@ -195,6 +195,7 @@ else:
                 st.write(stat)
 
             # Формируем отчет
+            today_date = datetime.now().strftime("%d.%m.%Y")
             report_lines = [
                 f"# Статистика за {day_choice} состава \"{selected_supervisor}\" ({today_date})"
             ]
