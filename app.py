@@ -4,6 +4,7 @@ import os
 import json
 from datetime import datetime
 from hashlib import sha256
+import pytz
 
 # Пути к файлам
 USERS_FILE = "users.json"
@@ -195,7 +196,8 @@ else:
                 st.write(stat)
 
             # Формируем отчет
-            today_date = datetime.now().strftime("%d.%m.%Y")
+            moscow_tz = pytz.timezone("Europe/Moscow")
+            today_date = datetime.now(moscow_tz).strftime("%d.%m.%Y")
             report_lines = [
                 f"# Статистика за {day_choice} состава \"{selected_supervisor}\" ({today_date})"
             ]
